@@ -1,0 +1,8 @@
+# Ignore gcc dump files (e.g. "smoketest.c.004t.gimple")
+smoketest.c.*
+
+# Ignore built assembler:
+smoketest.s
+
+# Ignore backups
+*~
