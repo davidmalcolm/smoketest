@@ -29,3 +29,29 @@ int test_switch (int p, int q, int r)
 
   return 0;
 }
+
+struct coord
+{
+  double x;
+  double y;
+};
+
+struct coord test_returning_struct (double x, double y)
+{
+  struct coord result;
+  result.x = x;
+  result.y = y;
+}
+
+int test_inline_asm (int i)
+{
+  int j;
+
+  /* Move  i to j; then j += 1: */
+  asm ("mov %1, %0\n\t"
+       "add $1, %0"
+       : "=r" (j)
+       : "r" (i));
+
+  return j;
+}
