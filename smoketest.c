@@ -55,3 +55,16 @@ int test_inline_asm (int i)
 
   return j;
 }
+
+int test_constants (int i, int j)
+{
+  return (i & 1000) * (j & 8675309);
+}
+
+void *test_forced_label (void)
+{
+  /* See https://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html */
+
+ my_label:
+  return &&my_label;
+}
